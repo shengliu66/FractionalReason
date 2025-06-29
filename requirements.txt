@@ -1,0 +1,27 @@
+# Core ML Libraries
+torch>=1.12.0
+transformers>=4.21.0
+datasets>=2.0.0
+numpy>=1.21.0
+
+# Progress bars and utilities
+tqdm>=4.64.0
+
+# Model optimization and quantization
+bitsandbytes>=0.37.0
+
+# Optional but recommended for better performance
+accelerate>=0.20.0
+
+# For scientific computing (if needed)
+scipy>=1.9.0
+
+# For data processing
+pandas>=1.5.0
+
+# For visualization (if needed)
+matplotlib>=3.5.0
+seaborn>=0.11.0
+
+# For reproducibility
+safetensors>=0.3.0 
