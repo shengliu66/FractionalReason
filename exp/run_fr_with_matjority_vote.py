@@ -227,7 +227,7 @@ class Evaluator:
         """
         
         exp_name = self.get_exp_name(self.gen_model_args['model_type'], self.ds_args['dataset_name'], start_sample, n_samples, num_trials, self.alpha_mode, alpha_a, alpha_b)
-        output_file_path = os.path.join(self.root_path, exp_name + "_SNS_ablation_plain_majority_vote.json")
+        output_file_path = os.path.join(self.root_path, exp_name + "_FR_majority_vote.json")
         print('=' * 20)
         print('Current experimentoutput file path: ', output_file_path)
         print('=' * 20)

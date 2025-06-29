@@ -9,6 +9,6 @@ logger_root = root.joinpath("logger")
 dump_root = root.joinpath("dump")
 
 # modify to /your/folder/contains/huggingface/cache
-checkpoints_root = Path("/gpfs/data/razavianlab/home/sl5924/llm/.cache/huggingface/transformers")
+checkpoints_root = Path("/your/folder/contains/huggingface/cache")
 
 hf_datasets_root = root.joinpath("datasets")

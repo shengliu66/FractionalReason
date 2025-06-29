@@ -3,6 +3,9 @@
 A research framework for evaluating and improving large language model (LLM) reasoning through latent shifting techniques and advanced evaluation methods.
 
 ## Overview
+![FractionalReason Framework](assets/fr-overview.png)
+
+**Figure 1**: Overview of the FractionalReason framework. The system extracts latent steering vectors from demonstration examples and applies them with tunable scaling factors (α) to control reasoning intensity at inference time. This enables continuous control over reasoning depth without requiring model fine-tuning.
 
 FractionalReason is a **training-free and model-agnostic framework** that enables continuous control over reasoning intensity at inference time. Unlike existing test-time compute methods that apply reasoning uniformly across inputs, Fractional Reasoning recognizes that different problems require different levels of reasoning depth.
 
@@ -54,11 +57,8 @@ FractionalReason/
 │   ├── loader.py                # Dataset loading utilities
 │   └── demo.py                  # Demonstration task handler
 ├── models/                       # Model loading and configuration
-│   └── huggingface.py           # HuggingFace model integration
-├── scripts/                      # Batch execution scripts
-│   ├── run_baselines.sh         # Run baseline evaluations
-│   ├── run_ablation.sh          # Ablation studies
-│   └── run_sns.sh               # SNS (Shift and Scale) experiments
+│   └── huggingface.py           # HuggingFace model 
+experiments
 ├── records/                      # Experimental results
 │   ├── rewarded_majority_vote/  # Results with reward model scoring
 │   └── plain_majority_vote/     # Results with simple majority voting
@@ -138,7 +138,7 @@ checkpoints_root = Path("/your/path/to/huggingface/cache")
 
 ## Usage
 
-### Basic Evaluation
+### Fractional Reasoning with Majority Vote
 
 Run a basic evaluation with majority voting and Fractional Reasoning:
 
@@ -173,75 +173,11 @@ python exp/run_original_model.py \
     --dataset gsm8k
 ```
 
-### Batch Execution
-
-For cluster computing, use the provided shell scripts:
-
-```bash
-# Run all baseline evaluations
-bash scripts/run_baselines.sh
-
-# Run ablation studies
-bash scripts/run_ablation.sh
-```
-
-## Key Parameters
-
-### Fractional Reasoning Configuration
-- `--alpha_mode`: Distribution for alpha scaling factors (`uniform`, `fixed`)
-- `--alpha_a`, `--alpha_b`: Range for alpha values controlling reasoning intensity
-- `--num_trials`: Number of trials per question for breadth-based scaling
-
-### Model Configuration
-- `--model_type`: Model family (Qwen2.5, llama-3, R1Qwen)
-- `--model_size`: Model size (7b, 14b, 72b, etc.)
-- `--in_8bit`: Enable 8-bit quantization for memory efficiency
-
-### Evaluation Configuration
-- `--dataset`: Target dataset for evaluation
-- `--start_sample`, `--n_samples`: Sample range for evaluation
-- `--num_return_sequences`: Number of generations per query
-
-## Method Overview
-
-### Fractional Reasoning Framework
-
-Fractional Reasoning addresses the limitation of uniform reasoning application across diverse problem complexities. The method works through:
-
-1. **Latent Steering Vector Extraction**: Analyzing hidden states to identify reasoning-associated directions in the model's latent space
-2. **Tunable Scaling**: Applying extracted steering vectors with continuous scaling factors (alpha) to control reasoning intensity
-3. **Adaptive Reasoning**: Allowing models to dynamically adjust reasoning depth based on problem complexity
-
-### Test-Time Scaling Modes
-
-**Breadth-Based Scaling** (Multiple Output Generation):
-- **Best-of-N**: Generate N responses with varying reasoning intensities and select the highest-quality output
-- **Majority Voting**: Generate multiple responses with different alpha values and aggregate through voting
-- **Reward Model Scoring**: Use trained reward models to score and rank fractionally-reasoned outputs
-
-**Depth-Based Scaling** (Single Chain Enhancement):
-- **Self-Reflection**: Enhance individual reasoning chains by applying fractional reasoning to improve step-by-step correctness
-- **Iterative Refinement**: Progressively apply stronger reasoning intensities to refine solutions
-
-### Key Advantages
-
-- **Problem-Adaptive**: Automatically adjusts reasoning intensity based on problem complexity
-- **Continuous Control**: Fine-grained control over reasoning depth through alpha scaling
-- **No Training Required**: Works with existing pre-trained models without additional training
-- **Universal Compatibility**: Model-agnostic approach works across different architectures
-- **Composable**: Can be combined with existing test-time compute strategies
 
 ## Results Structure
 
 Results are saved in JSON format under the `records/` directory:
 - Detailed per-question results with generated responses
-
-## Contributing
-
-1. Follow the existing code structure and naming conventions
-2. Add appropriate documentation for new features
-3. Test on multiple datasets before submitting changes
-4. Update this README for significant feature additions
 
 ## Citation
 
@@ -254,12 +190,10 @@ If you use this code in your research, please cite:
   journal={arXiv preprint arXiv:2506.15882},
   year={2025}
 }
-}
 ```
 
 ## License
-
-[License information]
+MIT license
 
 ## Contact
 
