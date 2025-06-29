@@ -207,7 +207,7 @@ if __name__ == "__main__":
     parser.add_argument('--num_trials', type=int, default=1, help='Number of trials for generation')
     parser.add_argument('--model_type', type=str, default='llama-3', help='model to use')
     parser.add_argument('--model_size', type=str, default='8b', help='model size to use')
-    parser.add_argument('--dataset', type=str, default='gsm8k', choices=['gsm8k', 'HuggingFaceH4/MATH-500', 'Idavidrein/gpqa', 'mmlu', 'aime2024', 'musr'], help='dataset to use')
+    parser.add_argument('--dataset', type=str, default='gsm8k', choices=['gsm8k', 'HuggingFaceH4/MATH-500', 'Idavidrein/gpqa'], help='dataset to use')
     parser.add_argument('--split', type=str, default='test', help='split of the dataset to use')
     args = parser.parse_args()
 
