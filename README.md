@@ -5,7 +5,6 @@ A research framework for evaluating and improving large language model (LLM) rea
 ## Overview
 ![FractionalReason Framework](assets/fr-overview.png)
 
-**Figure 1**: Overview of the FractionalReason framework. The system extracts latent steering vectors from demonstration examples and applies them with tunable scaling factors (α) to control reasoning intensity at inference time. This enables continuous control over reasoning depth without requiring model fine-tuning.
 
 FractionalReason is a **training-free and model-agnostic framework** that enables continuous control over reasoning intensity at inference time. Unlike existing test-time compute methods that apply reasoning uniformly across inputs, Fractional Reasoning recognizes that different problems require different levels of reasoning depth.
 
