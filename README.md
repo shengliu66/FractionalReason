@@ -2,9 +2,10 @@
 
 A research framework for evaluating and improving large language model (LLM) reasoning through latent shifting techniques and advanced evaluation methods.
 
-## Overview
 ![FractionalReason Framework](assets/fr-overview.png)
 
+
+## Overview
 
 FractionalReason is a **training-free and model-agnostic framework** that enables continuous control over reasoning intensity at inference time. Unlike existing test-time compute methods that apply reasoning uniformly across inputs, Fractional Reasoning recognizes that different problems require different levels of reasoning depth.
 
