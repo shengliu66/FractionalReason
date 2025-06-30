@@ -14,15 +14,8 @@ The framework operates by extracting **latent steering vectors** associated with
 1. **Breadth-based strategies**: Improving output quality through Best-of-N and majority voting
 2. **Depth-based strategies**: Enhancing individual reasoning chain correctness through self-reflection
 
-## Key Features
-
-- **Continuous Reasoning Control**: Tunable scaling factors for dynamic reasoning intensity
-- **Training-Free**: No model fine-tuning required - works with pre-trained models
-- **Model-Agnostic**: Compatible with Qwen, Llama, R1Qwen, and other HuggingFace models
-- **Dual Scaling Modes**: Support for both breadth-based and depth-based test-time scaling
-- **Latent Steering**: Advanced latent space manipulation for reasoning enhancement
-- **Comprehensive Evaluation**: Extensive testing on mathematical and scientific reasoning tasks
-- **Parallel Execution**: SLURM-based scripts for efficient cluster computing
+## Under construction
+We are still working on this repository, so please let us know if you find any issue or problem while runing the code. 
 
 ## Supported Models
 
