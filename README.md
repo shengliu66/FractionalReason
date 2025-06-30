@@ -7,8 +7,8 @@ A research framework for evaluating and improving large language model (LLM) rea
 
 <!--- BADGES: START --->
 [![GitHub license](https://img.shields.io/badge/License-MIT-green.svg?logo=github)](https://lbesson.mit-license.org/)
-[![Arxiv](https://img.shields.io/badge/arXiv-2502.11271-B31B1B.svg?logo=arxiv)]([https://arxiv.org/abs/2506.15882](https://arxiv.org/abs/2506.15882))
-[![Website](https://img.shields.io/badge/Website-FractionalReason-D41544%3Flogo%3Doctopusdeploy)]([https://octotools.github.io/](https://shengliu66.github.io/fractreason/))
+[![Arxiv](https://img.shields.io/badge/arXiv-2502.11271-B31B1B.svg?logo=arxiv)](https://arxiv.org/abs/2506.15882)
+[![Website](https://img.shields.io/badge/Website-FractionalReason-D41544%3Flogo%3Doctopusdeploy)](https://shengliu66.github.io/fractreason/)
 <!--- BADGES: END --->
 
 
